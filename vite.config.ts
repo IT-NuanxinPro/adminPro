@@ -40,24 +40,24 @@ export default defineConfig(({mode }: ConfigEnv): UserConfig => {
         '#': fileURLToPath(new URL('./types', import.meta.url)),
       },
     },
-    build: {
-      // 关闭sourcemap报错时不会提示源文件位置
-      sourcemap:false,
-      // 打包后的文件大小超过 400kb 会提示警告
-      chunkSizeWarningLimit: 400,
-      rollupOptions: {
-        // 打包入口文件
-        input: {
-          index: fileURLToPath(new URL('./index.html', import.meta.url)),
-        },
-        // 静态资源分类打包
-        output: {
-          format: 'esm',
-          assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
-          chunkFileNames: 'static/js/[name]-[hash].js',
-          entryFileNames: 'static/js/[name]-[hash].js',
-        }
-      }
-    }
+    // build: {
+    //   // 关闭sourcemap报错时不会提示源文件位置
+    //   sourcemap:false,
+    //   // 打包后的文件大小超过 400kb 会提示警告
+    //   chunkSizeWarningLimit: 400,
+    //   rollupOptions: {
+    //     // 打包入口文件
+    //     input: {
+    //       index: fileURLToPath(new URL('./index.html', import.meta.url)),
+    //     },
+    //     // 静态资源分类打包
+    //     output: {
+    //       format: 'esm',
+    //       assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+    //       chunkFileNames: 'static/js/[name]-[hash].js',
+    //       entryFileNames: 'static/js/[name]-[hash].js',
+    //     }
+    //   }
+    // }
   }
 })
