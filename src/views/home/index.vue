@@ -1,19 +1,19 @@
 <template>
   <div class="container">
-    <span>hello 刘峙坤帅哥</span>
+    <span>hello 暖心</span>
   </div>
 </template>
 
 <script setup lang="ts">
 import gwm from 'gwm'
 gwm.creation({
-  txt: '暖心',
+  txt: '暖心专属',
   mode: 'svg',
   watch: true,
   fontSize: 12,
-  width: 140,
-  height: 140,
-  color: '#000',  //字体颜色
+  width: 120,
+  height: 120,
+  color: '#ccc',  //字体颜色
   font: 'pingfang', //字体
   css: {
     'z-index': 99999,
