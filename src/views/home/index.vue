@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <span>hello 暖心</span>
+    <span>马强大帅哥</span>
   </div>
 </template>
 
