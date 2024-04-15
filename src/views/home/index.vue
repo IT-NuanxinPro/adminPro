@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <span></span>
+        <span>hello nuanxin</span>
     </div>
 </template>
 

@@ -3,7 +3,7 @@ module.exports = {
     extends: [
         'stylelint-config-standard',
         'stylelint-config-prettier',
-        // 'stylelint-config-recommended-less',
+        'stylelint-config-recommended-less',
         'stylelint-config-standard-vue'
     ],
     // 添加规则插件
