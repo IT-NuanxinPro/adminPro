@@ -1,0 +1,47 @@
+// 变更部分el变量 配置主题色
+:root {
+    --el-fill-color-blank: var(--nuanxin-backgroud-color);
+    --el-text-color-primary: var(--nuanxin-color-dark-black);
+    --el-bg-color: var(--nuanxin-backgroud-color);
+}
+
+// 修改 el-button--primary 主题色
+.el-button--primary {
+    --el-color-primary: var(--nuanxin-color-main);
+}
+
+.el-button--primary:hover,
+.el-button--primary:focus {
+    --el-button-hover-border-color: var(--nuanxin-color-main-light-1);
+    --el-button-hover-bg-color: var(--nuanxin-color-main-light-1);
+}
+
+.el-button--primary:active {
+    --el-button-active-border-color: var(--nuanxin-color-main);
+    --el-button-active-bg-color: var(--nuanxin-color-main);
+}
+
+// 修改 menu--horizontal 激活主题色
+.el-menu.el-menu--horizontal > .el-menu-item.is-active {
+    border-bottom: 2px solid var(--nuanxin-color-main);
+    color: var(--nuanxin-color-main) !important;
+}
+
+.el-menu.el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
+.el-menu.el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+    color: var(--nuanxin-color-main);
+    background-color: var(--nuanxin-color-main-light-2);
+}
+
+// 修改 el-switch--large 主题色
+.el-switch.is-checked.el-switch--large .el-switch__core {
+    background-color: var(--nuanxin-color-main);
+    border-color: var(--nuanxin-color-main);
+}
+
+// 更改 el-input 获取焦点后的主题色
+.el-input {
+    .el-input__wrapper.is-focus {
+        box-shadow: 0 0 0 1px var(--nuanxin-color-main) inset;
+    }
+}

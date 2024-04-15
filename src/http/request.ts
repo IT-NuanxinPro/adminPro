@@ -9,8 +9,8 @@ interface BaseResponse<T = any> {
     status?: number | string;
 }
 
-const currentBaseUrl = import.meta.env.VITE_APP_USE_MOck
-    ? import.meta.env.VITE_APP_MOCK_PREFIX
+const currentBaseUrl = import.meta.env.VITE_APP_USE_MOCK
+    ? import.meta.env.VITE_APP_MOCK_BASEURL
     : import.meta.env.VITE_APP_API_BASEURL;
 const service = axios.create({
     baseURL: currentBaseUrl,
@@ -72,7 +72,7 @@ const requestInstance = <T = any>(config: AxiosRequestConfig): Promise<T> => {
                     message: data.message,
                     type: 'success'
                 }); // 此处返回data信息 也就是 api 中配置好的 Response类型
-                resolve(data.data as T);
+                resolve(data as T);
             }
         });
     });

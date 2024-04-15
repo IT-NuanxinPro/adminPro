@@ -44,13 +44,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
                 autoInstall: true
             })
         ],
-        // css: {
-        //   preprocessorOptions: {
-        //     scss: {
-        //       additionalData: `@import "@/assets/css/variables.scss";`
-        //     }
-        //   }
-        // },
         server: {
             host: true,
             port: 9000,
