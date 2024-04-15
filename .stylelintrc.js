@@ -118,7 +118,6 @@ module.exports = {
             'transition'
         ],
         'font-family-no-duplicate-names': null,
-        'no-duplicate-selectors': null,
-        'no-empty-source': null
+        'no-duplicate-selectors': null
     }
 };

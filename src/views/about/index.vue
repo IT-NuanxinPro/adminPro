@@ -6,6 +6,6 @@
 
 <style scoped>
 div {
-  color: red;
+    color: red;
 }
 </style>
