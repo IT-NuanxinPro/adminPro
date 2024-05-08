@@ -18,6 +18,7 @@ declare module 'vue' {
         ElCol: (typeof import('element-plus/es'))['ElCol'];
         ElColorPicker: (typeof import('element-plus/es'))['ElColorPicker'];
         ElConfigProvider: (typeof import('element-plus/es'))['ElConfigProvider'];
+        ElContainer: (typeof import('element-plus/es'))['ElContainer'];
         ElDatePicker: (typeof import('element-plus/es'))['ElDatePicker'];
         ElDivider: (typeof import('element-plus/es'))['ElDivider'];
         ElDrawer: (typeof import('element-plus/es'))['ElDrawer'];
@@ -31,6 +32,7 @@ declare module 'vue' {
         ElImage: (typeof import('element-plus/es'))['ElImage'];
         ElInput: (typeof import('element-plus/es'))['ElInput'];
         ElLink: (typeof import('element-plus/es'))['ElLink'];
+        ElMain: (typeof import('element-plus/es'))['ElMain'];
         ElMenu: (typeof import('element-plus/es'))['ElMenu'];
         ElMenuItem: (typeof import('element-plus/es'))['ElMenuItem'];
         ElOption: (typeof import('element-plus/es'))['ElOption'];
@@ -48,6 +50,7 @@ declare module 'vue' {
         ElTimelineItem: (typeof import('element-plus/es'))['ElTimelineItem'];
         ElTooltip: (typeof import('element-plus/es'))['ElTooltip'];
         IEpClose: (typeof import('~icons/ep/close'))['default'];
+        IEpElementPlus: (typeof import('~icons/ep/element-plus'))['default'];
         IEpSetting: (typeof import('~icons/ep/setting'))['default'];
         IEpUser: (typeof import('~icons/ep/user'))['default'];
         RouterLink: (typeof import('vue-router'))['RouterLink'];

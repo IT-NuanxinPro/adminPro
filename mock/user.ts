@@ -27,7 +27,7 @@ export default [
                     data: {
                         code: 0,
                         message: '登录成功',
-                        username: 'nuanxin',
+                        username: '暖心',
                         roles: ['admin'],
                         accessToken: 'admin'
                     }
@@ -55,7 +55,7 @@ export default [
                     data: {
                         code: 0,
                         message: '登录成功',
-                        username: 'nuanxin',
+                        username: '暖心',
                         roles: ['admin'],
                         accessToken: 'nuanxin'
                     }
@@ -65,7 +65,7 @@ export default [
                     data: {
                         code: 0,
                         message: '登录成功',
-                        username: 'common',
+                        username: '普通用户',
                         roles: ['common'],
                         accessToken: 'common'
                     }

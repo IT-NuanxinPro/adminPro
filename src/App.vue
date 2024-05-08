@@ -3,3 +3,9 @@
 </template>
 
 <script setup lang="ts"></script>
+
+<style lang="css">
+#app {
+    height: 100vh;
+}
+</style>

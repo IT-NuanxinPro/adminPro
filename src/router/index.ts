@@ -23,10 +23,15 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes
 });
-
+const noLoginRouter = ['/login', '/about'];
 router.beforeEach((to, from, next) => {
     NProgress.start();
-    next();
+    const token = sessionStorage.getItem('userInfo');
+    if (token || noLoginRouter.includes(to.path)) {
+        next();
+    } else {
+        next('/login');
+    }
 });
 
 router.afterEach(() => {
