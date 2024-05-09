@@ -1,1 +1,0 @@
-import{m as o,o as s,c as a,a1 as t,a2 as c,V as n,_}from"./index-DG4263WK.js";const d=e=>(t("data-v-5510d34f"),e=e(),c(),e),p={class:"container"},i=d(()=>n("span",null,"hello nuanxin",-1)),r=[i],l=o({__name:"index",setup(e){return(f,h)=>(s(),a("div",p,r))}}),u=_(l,[["__scopeId","data-v-5510d34f"]]);export{u as default};
