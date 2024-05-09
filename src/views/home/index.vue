@@ -1,66 +1,115 @@
 <template>
-    <div class="container">
-        <span>hello nuanxin</span>
+    <div class="wrapper-content">
+        <el-form :inline="true" :model="searchData" class="search-form">
+            <el-form-item>
+                <el-input v-model="searchData.title" placeholder="请输入名称"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-input v-model="searchData.introduce" placeholder="请输入详情"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="onSearch">查询</el-button>
+            </el-form-item>
+        </el-form>
+        <el-table
+            :data="dataList"
+            border
+            style="width: 100%"
+            :header-cell-style="{ background: '#fafafa', color: '#606266' }"
+        >
+            <el-table-column prop="id" label="序号" align="center" width="180"></el-table-column>
+            <el-table-column prop="title" label="名称" align="center" width="180"></el-table-column>
+            <el-table-column prop="introduce" label="详情" align="center"></el-table-column>
+        </el-table>
+        <el-pagination
+            class="pagination"
+            background
+            layout="sizes, prev, pager, next"
+            :total="searchData.total"
+            :page-size="searchData.pageSize"
+            :page-sizes="[5, 10, 15, 20]"
+            @current-change="handleCurrentChange"
+            @size-change="handleSizeChange"
+        />
     </div>
 </template>
 
 <script setup lang="ts">
-// import gwm from 'gwm';
-// gwm.creation({
-//     txt: '暖心专属',
-//     mode: 'svg',
-//     watch: true,
-//     fontSize: 12,
-//     width: 120,
-//     height: 120,
-//     color: '#ccc', //字体颜色
-//     font: 'pingfang', //字体
-//     css: {
-//         'z-index': 99999,
-//         'pointer-events': 'none'
-//     }, //自定义样式，这里因为项目需要添加在顶层的图层，
-//     alpha: 0.6,
-//     angle: -15
-// });
+import { getProjectList } from '@/api/project';
+interface IProject {
+    id: number;
+    userId: string;
+    title: string;
+    introduce: string;
+}
+
+const tableData = ref<IProject[]>([]);
+const searchData = reactive({
+    title: '',
+    introduce: '',
+    currentPage: 1,
+    pageSize: 5,
+    total: 0
+});
+
+const fetchData = () => {
+    getProjectList().then((res) => {
+        tableData.value = res.data;
+        searchData.total = res.data.length;
+    });
+};
+
+fetchData();
+
+// 实际展示的数据
+let dataList = computed(() => {
+    return tableData.value.slice(
+        (searchData.currentPage - 1) * searchData.pageSize,
+        searchData.currentPage * searchData.pageSize
+    );
+});
+
+const handleCurrentChange = (page: number) => {
+    searchData.currentPage = page;
+};
+
+const handleSizeChange = (pageSize: number) => {
+    searchData.pageSize = pageSize;
+};
+
+const onSearch = () => {
+    let res: IProject[] = [];
+    if (searchData.title || searchData.introduce) {
+        if (searchData.title) {
+            res = tableData.value.filter((item) => item.title.includes(searchData.title));
+        }
+        if (searchData.introduce) {
+            res = tableData.value.filter((item) => item.introduce.includes(searchData.introduce));
+        }
+    } else {
+        res = tableData.value;
+    }
+    searchData.currentPage = 1;
+    searchData.total = res.length;
+    tableData.value = res;
+};
+
+watch([() => searchData.title, () => searchData.introduce], () => {
+    if (!searchData.title && !searchData.introduce) {
+        fetchData();
+    }
+});
 </script>
 
 <style lang="less" scoped>
-.container {
+.wrapper-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: bold;
+    flex-direction: column;
 
-    span {
-        background: linear-gradient(
-            90deg,
-            #ffc0cb,
-            #ff69b4,
-            #ff1493,
-            #c71585,
-            #8b008b,
-            #4b0082,
-            #00f,
-            #0000cd,
-            #00008b,
-            #000080,
-            #191970,
-            #000080,
-            #00008b,
-            #0000cd,
-            #00f,
-            #4b0082,
-            #8b008b,
-            #c71585,
-            #ff1493,
-            #ff69b4,
-            #ffc0cb
-        );
-        background-size: 400% 100%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: gradient 15s linear infinite;
+    .pagination {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
     }
 }
 </style>

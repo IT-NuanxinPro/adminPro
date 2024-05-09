@@ -24,10 +24,13 @@ const router = createRouter({
     routes
 });
 const noLoginRouter = ['/login', '/about'];
+
 router.beforeEach((to, from, next) => {
     NProgress.start();
     const token = sessionStorage.getItem('userInfo');
     if (token || noLoginRouter.includes(to.path)) {
+        next();
+    } else if (window.location.hostname.includes('nuanxinpro')) {
         next();
     } else {
         next('/login');

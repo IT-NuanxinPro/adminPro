@@ -20,6 +20,7 @@ declare module 'vue' {
         ElConfigProvider: (typeof import('element-plus/es'))['ElConfigProvider'];
         ElContainer: (typeof import('element-plus/es'))['ElContainer'];
         ElDatePicker: (typeof import('element-plus/es'))['ElDatePicker'];
+        ElDialog: (typeof import('element-plus/es'))['ElDialog'];
         ElDivider: (typeof import('element-plus/es'))['ElDivider'];
         ElDrawer: (typeof import('element-plus/es'))['ElDrawer'];
         ElDropdown: (typeof import('element-plus/es'))['ElDropdown'];
@@ -35,7 +36,10 @@ declare module 'vue' {
         ElMain: (typeof import('element-plus/es'))['ElMain'];
         ElMenu: (typeof import('element-plus/es'))['ElMenu'];
         ElMenuItem: (typeof import('element-plus/es'))['ElMenuItem'];
+        ElMessage: (typeof import('element-plus/es'))['ElMessage'];
+        ElMessageBox: (typeof import('element-plus/es'))['ElMessageBox'];
         ElOption: (typeof import('element-plus/es'))['ElOption'];
+        ElPagination: (typeof import('element-plus/es'))['ElPagination'];
         ElProgress: (typeof import('element-plus/es'))['ElProgress'];
         ElRow: (typeof import('element-plus/es'))['ElRow'];
         ElScrollbar: (typeof import('element-plus/es'))['ElScrollbar'];
@@ -49,6 +53,7 @@ declare module 'vue' {
         ElTimeline: (typeof import('element-plus/es'))['ElTimeline'];
         ElTimelineItem: (typeof import('element-plus/es'))['ElTimelineItem'];
         ElTooltip: (typeof import('element-plus/es'))['ElTooltip'];
+        ElTree: (typeof import('element-plus/es'))['ElTree'];
         IEpClose: (typeof import('~icons/ep/close'))['default'];
         IEpElementPlus: (typeof import('~icons/ep/element-plus'))['default'];
         IEpSetting: (typeof import('~icons/ep/setting'))['default'];
