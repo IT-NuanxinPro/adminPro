@@ -360,7 +360,7 @@ pnpm build
 ## 📞 联系方式
 
 -   **作者**: IT-NuanxinPro
--   **邮箱**: 105851435+IT-NuanxinPro@users.noreply.github.com
+-   **邮箱**: 1569250882@qq.com
 -   **GitHub**: [https://github.com/IT-NuanxinPro](https://github.com/IT-NuanxinPro)
 
 ---
