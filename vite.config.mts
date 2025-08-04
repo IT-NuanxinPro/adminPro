@@ -19,6 +19,13 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         base: './',
         publicDir: fileURLToPath(new URL('./public/', import.meta.url)), // 无需处理静态资源位置
         assetsInclude: fileURLToPath(new URL('./src/assets/', import.meta.url)), // 需要处理的静态资源位置
+        css: {
+            preprocessorOptions: {
+                less: {
+                    additionalData: `@import "${fileURLToPath(new URL('./src/styles/variables.less', import.meta.url))}";`
+                }
+            }
+        },
         plugins: [
             vue(),
             VueJsx(),

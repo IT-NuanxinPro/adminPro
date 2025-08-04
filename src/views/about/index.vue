@@ -4,8 +4,9 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
+<style lang="less" scoped>
 div {
+    height: 10vh;
     color: red;
 }
 </style>
